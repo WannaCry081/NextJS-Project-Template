@@ -2,9 +2,7 @@
 
 Use this format to write clear, consistent commit messages that help with team collaboration, changelog generation, and Git history readability.
 
----
-
-## 📌 Format
+### 📌 Format
 
 ```
 <type>: <emoji> <short message>
@@ -13,61 +11,69 @@ Use this format to write clear, consistent commit messages that help with team c
 **Example:**
 
 ```
-feat: ✨ Add new search functionality
+feat: ✨ add new search functionality
 ```
 
----
-
-## 🏷️ Types and Emojis
+### 🏷️ Types and Emojis
 
 - **feat**: ✨ A new feature
-  _Example_: `feat: ✨ Add user onboarding screen`
+  _Example_: `feat: ✨ add user onboarding screen`
 
 - **fix**: 🐛 A bug fix
-  _Example_: `fix: 🐛 Fix header layout issue on mobile`
+  _Example_: `fix: 🐛 fix header layout issue on mobile`
 
 - **refactor**: ♻️ Code changes that don’t fix a bug or add a feature
-  _Example_: `refactor: ♻️ Simplify state management logic`
+  _Example_: `refactor: ♻️ simplify state management logic`
 
 - **docs**: 📝 Documentation-only changes
-  _Example_: `docs: 📝 Add API usage section to README`
+  _Example_: `docs: 📝 add API usage section to README`
 
-- **style**: 💄 Changes related to formatting, white space, or style (no logic changes)
-  _Example_: `style: 💄 Reformat code using Prettier`
+- **style**: 💄 Formatting, white‑space, or style changes (no logic)
+  _Example_: `style: 💄 reformat code using Prettier`
 
-- **chore**: 💬 Routine tasks such as config changes, literal updates, etc.
-  _Example_: `chore: 💬 Update localization text`
+- **chore**: 💬 Routine tasks (config changes, literal updates, etc.)
+  _Example_: `chore: 💬 update localization text`
 
-- **build**: 🧹 Changes that affect the build system or external dependencies
-  _Example_: `build: 🧹 Upgrade to Node.js 20`
-
-- **perf**: ⚡ Performance improvements
-  _Example_: `perf: ⚡ Reduce image load time on dashboard`
+- **perf**: ⚡️ Performance improvements
+  _Example_: `perf: ⚡️ Reduce image load time on dashboard`
 
 - **test**: ✅ Adding or updating tests
-  _Example_: `test: ✅ Add unit tests for auth utils`
+  _Example_: `test: ✅ add unit tests for auth utils`
 
-- **ci**: 🔁 Continuous Integration and deployment changes
-  _Example_: `ci: 🔁 Update GitHub Actions workflow for testing`
+- **ci**: 🔁 Continuous Integration/deployment changes
+  _Example_: `ci: 🔁 update GitHub Actions workflow for testing`
 
 - **revert**: ⏪ Reverts a previous commit
-  _Example_: `revert: ⏪ Revert auth state changes`
+  _Example_: `revert: ⏪ revert auth state changes`
 
-- **wip**: 🚧 Work in progress — not ready for production
-  _Example_: `chore: 🚧 Initial setup for dashboard layout`
+- **wip**: 🚧 Work in progress (not ready for production)
+  _Example_: `chore: 🚧 initial setup for dashboard layout`
 
-- **move**: 🚚 Moving or renaming files
-  _Example_: `refactor: 🚚 Move shared components to /common`
+- **chore**: 🚚 Renaming or moving files
+  _Example_: `chore: 🚚 rename utils directory to helpers`
 
 - **data**: 🗃️ Adds or updates datasets
-  _Example_: `chore: 🗃️ Update population dataset for 2025`
+  _Example_: `data: 🗃️ update population dataset for 2025`
 
----
+- **build**: ➕ Adding a dependency
+  _Example_: `build: ➕ add axios as a project dependency`
 
-## 💡 Best Practices
+- **build**: ➖ Removing a dependency
+  _Example_: `build: ➖ remove unused lodash dependency`
+
+- **remove**: 🔥 Deleting code
+  _Example_: `refactor: 🔥 delete legacy authentication module`
+
+- **remove**: 🔨 Updating or adding code
+  _Example_: `update: 🔨 Add input validation for email field`
+
+- **asset**: 🍱 Adding or updating static assets (images, icons, media)
+  _Example_: `asset: 🍱 Add company logo to assets folder`
+
+### 💡 Best Practices
 
 - Use the **imperative mood**: “Add”, not “Added” or “Adds”
 - Keep messages **concise and meaningful**
-- **Use only one emoji and type** per commit
+- **Use only one emoji and one type** per commit
 - **Break large changes** into smaller, focused commits
-- Message should be **under 72 characters** when possible
+- Aim for **under 72 characters** when possible
