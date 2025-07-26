@@ -1,79 +1,72 @@
-# ✅ Commit Message Guidelines (Conventional + Emoji Style)
+# Commit Message Guidelines
 
-Use this format to write clear, consistent commit messages that help with team collaboration, changelog generation, and Git history readability.
+Use this format to keep commit messages clear and consistent.
 
-### 📌 Format
+Format: `<type>: <emoji> <short message>`
 
-```
-<type>: <emoji> <short message>
-```
+Example:
+`feat: ✨ add new search functionality`
 
-**Example:**
+## Types and Emojis:
 
-```
-feat: ✨ add new search functionality
-```
+- feat: ✨ a new feature
+  Example: feat: ✨ add user onboarding screen
 
-### 🏷️ Types and Emojis
+- fix: 🐛 a bug fix
+  Example: fix: 🐛 fix header layout issue on mobile
 
-- **feat**: ✨ A new feature
-  _Example_: `feat: ✨ add user onboarding screen`
+- refactor: ♻️ code change that doesn’t fix a bug or add a feature
+  Example: refactor: ♻️ simplify state management logic
 
-- **fix**: 🐛 A bug fix
-  _Example_: `fix: 🐛 fix header layout issue on mobile`
+- docs: 📝 documentation changes
+  Example: docs: 📝 add API usage section to README
 
-- **refactor**: ♻️ Code changes that don’t fix a bug or add a feature
-  _Example_: `refactor: ♻️ simplify state management logic`
+- style: 💄 formatting or style change, no logic
+  Example: style: 💄 reformat code using Prettier
 
-- **docs**: 📝 Documentation-only changes
-  _Example_: `docs: 📝 add API usage section to README`
+- chore: 💬 routine tasks or config
+  Example: chore: 💬 update localization text
 
-- **style**: 💄 Formatting, white‑space, or style changes (no logic)
-  _Example_: `style: 💄 reformat code using Prettier`
+- perf: ⚡️ performance improvements
+  Example: perf: ⚡️ reduce image load time
 
-- **chore**: 💬 Routine tasks (config changes, literal updates, etc.)
-  _Example_: `chore: 💬 update localization text`
+- test: ✅ add or update tests
+  Example: test: ✅ add unit tests for auth utils
 
-- **perf**: ⚡️ Performance improvements
-  _Example_: `perf: ⚡️ Reduce image load time on dashboard`
+- ci: 🔁 CI or deployment config
+  Example: ci: 🔁 update GitHub Actions workflow
 
-- **test**: ✅ Adding or updating tests
-  _Example_: `test: ✅ add unit tests for auth utils`
+- revert: ⏪ revert a previous commit
+  Example: revert: ⏪ revert auth state changes
 
-- **ci**: 🔁 Continuous Integration/deployment changes
-  _Example_: `ci: 🔁 update GitHub Actions workflow for testing`
+- wip: 🚧 work in progress
+  Example: chore: 🚧 initial dashboard setup
 
-- **revert**: ⏪ Reverts a previous commit
-  _Example_: `revert: ⏪ revert auth state changes`
+- chore: 🚚 rename or move files
+  Example: chore: 🚚 rename utils directory
 
-- **wip**: 🚧 Work in progress (not ready for production)
-  _Example_: `chore: 🚧 initial setup for dashboard layout`
+- data: 🗃️ add or update datasets
+  Example: data: 🗃️ update population dataset
 
-- **chore**: 🚚 Renaming or moving files
-  _Example_: `chore: 🚚 rename utils directory to helpers`
+- build: ➕ add dependency
+  Example: build: ➕ add axios
 
-- **data**: 🗃️ Adds or updates datasets
-  _Example_: `data: 🗃️ update population dataset for 2025`
+- build: ➖ remove dependency
+  Example: build: ➖ remove lodash
 
-- **build**: ➕ Adding a dependency
-  _Example_: `build: ➕ add axios as a project dependency`
+- remove: 🔥 delete code
+  Example: refactor: 🔥 delete legacy module
 
-- **build**: ➖ Removing a dependency
-  _Example_: `build: ➖ remove unused lodash dependency`
+- update: 🔨 add or update code
+  Example: update: 🔨 add email validation
 
-- **remove**: 🔥 Deleting code
-  _Example_: `refactor: 🔥 delete legacy authentication module`
+- asset: 🍱 add or update static assets
+  Example: asset: 🍱 add company logo
 
-- **remove**: 🔨 Updating or adding code
-  _Example_: `update: 🔨 Add input validation for email field`
+## Best Practices:
 
-- **asset**: 🍱 Adding or updating static assets (images, icons, media)
-  _Example_: `asset: 🍱 Add company logo to assets folder`
-
-### 💡 Best Practices
-
-- Use the **imperative mood**: “Add”, not “Added” or “Adds”
-- Keep messages **concise and meaningful**
-- **Use only one emoji and one type** per commit
-- **Break large changes** into smaller, focused commits
-- Aim for **under 72 characters** when possible
+- Use imperative mood: "add", not "added"
+- Keep messages short and clear
+- Use only one emoji and one type per commit
+- Split big changes into small commits
+- Try to keep messages under 72 characters
