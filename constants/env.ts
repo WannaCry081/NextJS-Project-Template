@@ -8,4 +8,4 @@ function getEnvVar(k: keyof NodeJS.ProcessEnv): string {
 
 // Environment variables
 export const API_URL = getEnvVar("NEXT_PUBLIC_API_URL");
-export const BASE_URL = getEnvVar("NEXT_PUBLIC_BASE_URL");
+export const APP_URL = getEnvVar("NEXT_PUBLIC_APP_URL");
