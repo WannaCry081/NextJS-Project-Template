@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BASE_URL } from "@/constants/env";
+import { APP_URL } from "@/constants/env";
 
 // Define constants for metadata
 const DEFAULT_TITLE = "NextJS Project Template";
@@ -8,11 +8,11 @@ const DEFAULT_DESCRIPTION = "A Next.js project template";
 export const defaultMetadata: Metadata = {
   title: DEFAULT_TITLE,
   description: DEFAULT_DESCRIPTION,
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(APP_URL),
   openGraph: {
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    url: BASE_URL,
+    url: APP_URL,
     siteName: DEFAULT_TITLE,
     images: [],
   },
@@ -23,9 +23,9 @@ export const defaultMetadata: Metadata = {
     images: [],
   },
   alternates: {
-    canonical: BASE_URL,
+    canonical: APP_URL,
     languages: {
-      en: `${BASE_URL}/en`,
+      en: `${APP_URL}/en`,
     },
   },
   keywords: [],
