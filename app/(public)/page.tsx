@@ -63,6 +63,21 @@ export default function HomePage() {
             <div className="flex items-center gap-2">
               <ModeToggle />
 
+              {/* Mobile Navigation */}
+              <div className="block sm:hidden">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="icon">
+                      <MenuIcon className="size-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>Login</DropdownMenuLabel>
+                    <DropdownMenuItem>Register</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+
               {/* Authentication Section */}
               {isAuthenticated ? (
                 <DropdownMenu>
