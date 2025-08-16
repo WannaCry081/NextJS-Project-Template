@@ -7,6 +7,9 @@ import { Controller, useForm } from "react-hook-form";
 
 import { GithubIcon, MailIcon } from "lucide-react";
 
+// Custom Components
+import Logo from "@/components/shared/Logo";
+
 // UI Components
 import {
   Card,
@@ -56,8 +59,9 @@ const RegisterForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Card className="w-full max-w-md">
         <CardHeader className="py-2">
-          <CardTitle className="text-2xl font-bold text-center">
-            Create an account
+          <CardTitle className="text-2xl font-bold text-center flex flex-col items-center justify-center space-y-3">
+            <Logo variant="icon" />
+            <span>Create an account</span>
           </CardTitle>
           <CardDescription className="text-center text-sm text-muted-foreground">
             Enter your information to get started
