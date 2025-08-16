@@ -9,7 +9,7 @@ import { Controller, useForm } from "react-hook-form";
 import { GithubIcon, MailIcon } from "lucide-react";
 
 // Custom Components
-import Logo from "@/components/auth/components/Logo";
+import Logo from "@/components/auth/components/logo";
 
 // UI Components
 import {
