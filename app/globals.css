@@ -112,16 +112,11 @@
 }
 
 @layer base {
-  body {
-    @apply font-sans;
-  }
-}
-
-@layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
+    @apply font-sans;
     @apply bg-background text-foreground;
   }
 }
