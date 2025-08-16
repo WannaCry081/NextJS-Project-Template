@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 // Custom Components
-import Logo from "@/components/shared/Logo";
+import Logo from "@/components/auth/components/Logo";
 import ModeToggle from "@/components/shared/ModeToggle";
 
 // UI Components
