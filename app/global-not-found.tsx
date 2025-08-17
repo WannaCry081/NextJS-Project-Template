@@ -1,23 +1,29 @@
 "use client";
 
 import { useRouter } from "nextjs-toploader/app";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ArrowLeftIcon } from "lucide-react";
 
-// UI components
+// UI Components
 import { Button } from "@/components/ui/button";
 
 // Styles
 import "./globals.css";
 
-// TODO: Change it to poppins font
-const inter = Inter({ subsets: ["latin"] });
+// Utils
+import { cn } from "@/lib/utils";
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function GlobalNotFound() {
   const router = useRouter();
 
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={cn("antialiased", poppins.className)}>
       <body>
         <main className="h-dvh w-screen flex items-center justify-center p-4">
           <section className="flex flex-col md:flex-row items-start justify-center gap-2 md:gap-4">
