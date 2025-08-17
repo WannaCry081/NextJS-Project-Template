@@ -19,7 +19,7 @@ export default function GlobalNotFound() {
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <main className="h-dvh w-screen inline-flex items-center justify-center p-4">
+        <main className="h-dvh w-screen flex items-center justify-center p-4">
           <section className="flex flex-col md:flex-row items-start justify-center gap-2 md:gap-4">
             <span className="md:text-xl font-semibold px-3.5 py-1 bg-muted-foreground/5 rounded-sm">
               404
