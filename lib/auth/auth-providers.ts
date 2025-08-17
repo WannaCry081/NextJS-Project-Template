@@ -31,7 +31,7 @@ export const AuthProviders = [
     // TODO: Remove eslint disable when implementing the function
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async authorize(credentials, request) {
-      return null;
+      throw new Error("Credential-based authentication is not implemented.");
     },
   }),
 

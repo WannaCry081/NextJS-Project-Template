@@ -1,141 +1,99 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
 import {
   ArrowRightIcon,
   GithubIcon,
-  LogOutIcon,
   SparklesIcon,
+  MenuIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+// Custom Components
+import Logo from "@/components/auth/components/logo";
+import ModeToggle from "@/components/shared/mode-toggle";
+
+// UI Components
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ModeToggle } from "@/components/shared/mode-toggle";
+import { Button } from "@/components/ui/button";
 
-export default function HomePage() {
-  // Simulate authentication state - replace with real auth logic
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user] = useState({
-    name: "Alex Johnson",
-    email: "alex@example.com",
-    avatar: "/placeholder.svg?height=40&width=40",
-  });
-
-  const handleSignIn = () => {
-    setIsAuthenticated(true);
-  };
-
-  const handleSignOut = () => {
-    setIsAuthenticated(false);
-  };
+export default function Page() {
+  const features = [
+    "Authentication",
+    "Tanstack Integration",
+    "GraphQL Ready",
+    "Linting & Formatting",
+  ];
 
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="border-b ticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex flex-col">
+      <header className="border-b sticky top-0 z-50">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="size-8  rounded-lg flex items-center justify-center bg-foreground">
-                <div className="size-4 rounded-full bg-background"></div>
-              </div>
-              <span className="font-bold">WannaCry081</span>
-            </div>
+            <Logo />
 
-            {/* Navigation Links & Auth */}
-            <div className="flex items-center space-x-2">
-              {/* Authentication Section */}
-              {isAuthenticated ? (
+            <div className="flex items-center gap-2">
+              <ModeToggle />
+
+              <div className="flex items-center space-x-2 hidden sm:block">
+                <Link href="/login">
+                  <Button variant="outline">Login</Button>
+                </Link>
+                <Link href="/register">
+                  <Button>Register</Button>
+                </Link>
+              </div>
+
+              <div className="block sm:hidden">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      className="relative h-10 w-10 rounded-full"
-                    >
-                      <Avatar className="h-10 w-10">
-                        <AvatarImage
-                          src={user.avatar || "/placeholder.svg"}
-                          alt={user.name}
-                        />
-                        <AvatarFallback>
-                          {user.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
-                        </AvatarFallback>
-                      </Avatar>
+                    <Button size="icon" variant="outline">
+                      <MenuIcon className="size-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56" align="end" forceMount>
-                    <DropdownMenuLabel className="font-normal">
-                      <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-medium leading-none">
-                          {user.name}
-                        </p>
-                        <p className="text-xs leading-none text-muted-foreground">
-                          {user.email}
-                        </p>
-                      </div>
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleSignOut}>
-                      <LogOutIcon className="mr-2 h-4 w-4" />
-                      <span>Logout</span>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem asChild>
+                      <Link href="/login">Login</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/register">Register</Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              ) : (
-                <div className="flex items-center space-x-3">
-                  <Button variant="ghost" onClick={handleSignIn}>
-                    Login
-                  </Button>
-                  <Button onClick={handleSignIn}>Register</Button>
-                </div>
-              )}
-              <ModeToggle />
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
-      {/* Hero Section */}
-      <main className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 sm:pt-30 sm:pb-32">
+      <main className="flex flex-1 items-center justify-center px-2">
+        <section className="max-w-7xl mx-auto">
           <div className="text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full mb-8 border border-muted-foreground/40">
+            <div className="inline-flex items-center py-1.5 px-3 px-4 sm:py-2 rounded-full mb-6 border border-muted-foreground/40">
               <span className="text-xs font-medium inline-flex items-center space-x-2">
                 <SparklesIcon className="size-4" />
-                <span>Advanced Template System</span>
+                <span className="text-xs sm:text-sm">
+                  Advanced Template System
+                </span>
               </span>
             </div>
 
-            {/* Main Heading */}
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 ">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6">
               <span className="block">Build faster with</span>
               <span className="block">Next.js Project Template</span>
             </h1>
 
-            {/* Subheading */}
-            <p className="max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="max-w-sm sm:max-w-lg text-base sm:text-lg mx-auto mb-10 sm:mb-12 leading-snug sm:leading-relaxed">
               Production-ready Next.js templates with authentication, graphql
               support, and more. Perfect for kickstarting your next project.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-16">
-              <Button className="px-8 py-4" asChild>
+            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-12 sm:mb-16">
+              <Button asChild>
                 <Link
-                  href="https://github.com/yourusername/nextjs-template"
+                  href="https://github.com/WannaCry081/NextJS-Project-Template"
                   target="_blank"
                 >
                   <GithubIcon className="size-4" />
@@ -148,7 +106,7 @@ export default function HomePage() {
                 asChild
               >
                 <Link
-                  href="https://github.com/yourusername/nextjs-template/fork"
+                  href="https://github.com/WannaCry081/NextJS-Project-Template/fork"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -158,27 +116,18 @@ export default function HomePage() {
               </Button>
             </div>
 
-            {/* Feature Pills */}
-            <div className="flex flex-wrap justify-center gap-8 text-sm ">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-foreground rounded-full mr-3"></div>
-                Authentication
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-foreground rounded-full mr-3"></div>
-                Tanstack Integration
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-foreground rounded-full mr-3"></div>
-                GraphQL Ready
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-foreground rounded-full mr-3"></div>
-                Linting & Formatting
+            <div className="flex items-center justify-center w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 place-items-start gap-2 sm:gap-6 text-sm sm:text-base">
+                {features.map((feature) => (
+                  <li key={feature} className="flex items-center">
+                    <span className="w-2 h-2 bg-foreground rounded-full mr-3" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );

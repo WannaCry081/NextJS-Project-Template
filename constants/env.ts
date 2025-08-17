@@ -19,7 +19,7 @@ export const API_URL = getEnvVar("NEXT_PUBLIC_API_URL");
 export const APP_URL = getEnvVar("NEXT_PUBLIC_APP_URL");
 
 // NextAuth Credentials
-export const NEXTAUTH_SECRETS = getEnvVar("NEXTAUTH_SECRETS");
+export const NEXTAUTH_SECRET = getEnvVar("NEXTAUTH_SECRET");
 export const NEXTAUTH_MAX_AGE = parseInt(getEnvVar("NEXTAUTH_MAX_AGE"), 10);
 
 // GitHub OAuth Credentials
