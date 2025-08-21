@@ -20,21 +20,11 @@ fi
 
 # Rename the current directory to the project name
 echo "Renaming current directory to: $project_name"
-
-cd .. 
-mv "$(basename "$PWD")" "$project_name"
-cd "$project_name"
+mv "$(dirname "$PWD")/$(basename "$PWD")" "$(dirname "$PWD")/$project_name"
 
 # Update the "name" field in package.json
 echo "Updating package.json with project name: $project_name"
 if [ -f package.json ]; then
-
-  # Check if jq is installed
-  if ! command -v jq &> /dev/null; then
-    echo "Error: jq is not installed. Please install jq to update package.json."
-    exit 1
-  fi
-
   tmpfile=$(mktemp)
   jq --arg name "$project_name" '.name = $name' package.json > "$tmpfile" && mv "$tmpfile" package.json
 else
@@ -60,11 +50,6 @@ sleep 5
 
 clear
 
-if [ -d "$(dirname "$PWD")/$project_name" ]; then
-  cd "$(dirname "$PWD")/$project_name"
-else
-  echo "Directory $project_name does not exist. Exiting."
-  exit 1
-fi
+cd "$(dirname "$PWD")/$project_name"
 
-rm "$0"
+rm -rf run.sh
