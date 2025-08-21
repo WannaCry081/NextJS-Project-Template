@@ -16,11 +16,6 @@ const nextConfig: NextConfig = {
       "types",
     ],
   },
-
-  // TODO: Remove once Next.js supports this natively
-  experimental: {
-    globalNotFound: true,
-  },
 };
 
 export default nextConfig;
